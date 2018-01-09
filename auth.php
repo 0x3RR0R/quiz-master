@@ -1,5 +1,10 @@
 <link rel="stylesheet" href="includes/css/bootstrap.min.css">
 <link rel="stylesheet" href="includes/css/main.css">
+
+<head>
+  <title>Auth</title>
+</head>
+
 <body id="bground">
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
@@ -69,6 +74,9 @@ See a list of questions here: <a class="btn btn-primary" href="list_questions.ph
      background: linear-gradient(to right, #83a4d4, #b6fbff); 
   }
 
+.card {
+    border-radius: 8px;
+  }
    /*  #bground {
    
    color: white;

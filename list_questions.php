@@ -14,8 +14,20 @@
 
   if(!isset($_SESSION['auth']))
   {
-    echo '<div class="alert alert-warning">You are not authorized to view this page. Login to continue';
-    echo '&nbsp;<a href="auth.php">Login</a></div>';
+   echo '<body id="bground">';
+    echo '<div class="container">
+<div class="card" id="LT">
+<h4>You are not authorized to view this page. Login to continue</h4>
+ <a href="auth.php" class="btn btn-primary btn-block">Login</a>
+ </div>
+</div>';
+    echo '</body>';
+    echo '<style type="text/css">
+  #bground {
+     background: linear-gradient(to right, #83a4d4, #b6fbff); /* Standard syntax */
+  }
+</style>
+';
     exit();
   }
   /*Delete Questions*/
@@ -38,17 +50,20 @@
     <a class="nav-link btn btn-success" href="add_question.php">Add a question</a>
   </div>
 </div>
-<h2>Questions</h2>
+<hr>
 <?php if($result): ?>
 <div class="questions list-group">
   <?php foreach($result as $i=>$r): ?>
-          <div class="question">
-            <h3 class="question-title list-group-item">
-              <a href="edit_question.php?id=<?php echo $r['id']; ?>">
-                <?php echo $i+1 . '. ' . $r['question']; ?>
-              </a>
-              &nbsp;&nbsp;
-              <span class="question-delete"><a class="btn btn-danger" href="list_questions.php?delete-id=<?php echo $r['id']; ?>">Delete</a></span>
+          <div class="question card">
+            <h3 class="question-title">
+             <!--  <a href="edit_question.php?id=<?php echo $r['id']; ?>"> -->
+              <h3> <?php echo $i+1 . '. ' . $r['question']; ?> </h3>
+              <!-- </a> -->
+              <hr>
+              <div class="btn-group">
+              <span class="question-edit"><a class="btn btn-block btn-success" href="edit_question.php?id=<?php echo $r['id']; ?>">Edit</a></span>
+              <span class="question-delete"><a class="btn btn-block btn-danger" href="list_questions.php?delete-id=<?php echo $r['id']; ?>">Delete</a></span>
+            </div>
             </h3>
           </div>
   <?php endforeach; ?>
@@ -58,9 +73,19 @@
 <?php endif; ?>
 </div>
 <style type="text/css">
+h3 {
+  font-family: "Times New Roman", san-serif;
+  font-size: 25px;
+}
   .jumbotron {
     text-align: center;
     color: white;
      background: linear-gradient(to right, #83a4d4, #b6fbff);
   }
+.card {
+  border-radius: 10px;
+}
+.question-edit {
+    
+}
   </style>

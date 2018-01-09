@@ -1,29 +1,30 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<style>
 
-	</style>
-</head>
 <body>
-	<div class="container">
-		<h1>
-            Hello <span class="ityped"></span>
-        </h1>
-		<h2>
-         <span class="ityped-two"></span>
-        </h2>
-	</div>
-	<script src="includes/js/ityped.js"></script>
-	<script>
-		window.ityped.init(document.querySelector('.ityped'), {
-            strings : ['World', 'Universe'],
-            loop : true
-        });
-        window.ityped.init(document.querySelector('.ityped-two'), {
-            strings : ['John', 'Frank'],
-            loop : true
-        });
-	</script>
+<div class="badge badge-pill" id="timer"></div>
 </body>
-</html>
+<style>
+body {
+        background: #eee;
+    }
+
+#timer {
+    position: fixed;
+    padding: 10px;
+    font-size: 24px;
+    z-index: 1;
+    box-shadow: 0 0 7px 0px;
+    width: 200px;
+    background: black;
+    border-radius: 7px;
+    border-style: solid;
+    border-color: red;
+    border-width: 5px;
+    opacity: 0.3;
+    transition: 0.5s;
+    cursor: default;
+}
+
+#timer:hover {
+    box-shadow: 0 0 10px 0px;
+} 
+</style>
